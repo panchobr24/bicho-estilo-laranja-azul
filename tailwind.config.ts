@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,12 +26,12 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '24 100% 50%', // Orange
+					foreground: '0 0% 100%'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '217 91% 60%', // Blue
+					foreground: '0 0% 100%'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -41,8 +42,8 @@ export default {
 					foreground: 'hsl(var(--muted-foreground))'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					DEFAULT: '39 100% 85%', // Light orange
+					foreground: '24 100% 30%'
 				},
 				popover: {
 					DEFAULT: 'hsl(var(--popover))',
@@ -61,7 +62,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'pet-orange': '24 100% 50%',
+				'pet-blue': '217 91% 60%',
+				'pet-orange-light': '39 100% 85%',
+				'pet-blue-light': '217 91% 85%'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +89,20 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'bounce-soft': {
+					'0%, 100%': {
+						transform: 'translateY(-5%)'
+					},
+					'50%': {
+						transform: 'translateY(0)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'bounce-soft': 'bounce-soft 2s infinite'
 			}
 		}
 	},
