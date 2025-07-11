@@ -86,22 +86,30 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="lg:hidden py-4 border-t">
-            {menuItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsMenuOpen(false)}
-                className={`block py-3 px-4 rounded-lg font-medium transition-colors ${
-                  isActive(item.path)
-                    ? 'text-orange-500 bg-orange-50'
-                    : 'text-gray-700 hover:text-blue-500 hover:bg-blue-50'
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <>
+            {/* Overlay */}
+            <div className="fixed inset-0 bg-black bg-opacity-40 z-40 transition-opacity animate-fade-in" onClick={() => setIsMenuOpen(false)}></div>
+            {/* Mobile Navigation Drawer */}
+            <nav className="fixed top-0 right-0 w-3/4 max-w-xs h-full bg-white z-50 shadow-lg transform transition-transform duration-300 translate-x-0 animate-slide-in flex flex-col py-8 px-6">
+              <button className="self-end mb-6" onClick={() => setIsMenuOpen(false)}>
+                <X className="h-6 w-6" />
+              </button>
+              {menuItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block py-3 px-4 rounded-lg font-medium transition-colors mb-2 ${
+                    isActive(item.path)
+                      ? 'text-orange-500 bg-orange-50'
+                      : 'text-gray-700 hover:text-blue-500 hover:bg-blue-50'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </>
         )}
       </div>
     </header>

@@ -72,46 +72,46 @@ const Carrinho = () => {
               {items.map((item) => (
                 <Card key={item.id} className="overflow-hidden">
                   <CardContent className="p-0">
-                    <div className="flex items-center p-4">
+                    <div className="flex flex-col sm:flex-row items-center sm:items-start p-4 gap-4">
                       <img 
                         src={item.image} 
                         alt={item.name}
-                        className="w-20 h-20 object-cover rounded-lg"
+                        className="w-20 h-20 object-cover rounded-lg mb-2 sm:mb-0"
                       />
-                      <div className="flex-1 ml-4">
-                        <h3 className="font-bold text-lg text-gray-800">
+                      <div className="flex-1 w-full">
+                        <h3 className="font-bold text-lg text-gray-800 text-center sm:text-left">
                           {item.name}
                         </h3>
-                        <p className="text-orange-500 font-bold">
+                        <p className="text-orange-500 font-bold text-center sm:text-left">
                           R$ {item.price.toFixed(2).replace('.', ',')}
                         </p>
-                      </div>
-                      <div className="flex items-center space-x-2 ml-4">
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => updateQuantity(item.id, item.quantity - 1)}
-                        >
-                          <Minus className="h-4 w-4" />
-                        </Button>
-                        <span className="w-8 text-center font-bold">
-                          {item.quantity}
-                        </span>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
-                        >
-                          <Plus className="h-4 w-4" />
-                        </Button>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={() => removeItem(item.id)}
-                          className="text-red-500 hover:text-red-700 ml-2"
-                        >
-                          <Trash2 className="h-4 w-4" />
-                        </Button>
+                        <div className="flex items-center justify-center sm:justify-start space-x-2 mt-2">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                          >
+                            <Minus className="h-4 w-4" />
+                          </Button>
+                          <span className="w-8 text-center font-bold">
+                            {item.quantity}
+                          </span>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                          >
+                            <Plus className="h-4 w-4" />
+                          </Button>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => removeItem(item.id)}
+                            className="text-red-500 hover:text-red-700 ml-2"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
