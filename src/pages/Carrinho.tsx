@@ -6,11 +6,23 @@ import { Card, CardContent } from '@/components/ui/card';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from '@/hooks/use-toast';
 import { Link } from 'react-router-dom';
+import { Form, FormItem, FormLabel, FormControl, FormMessage } from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { useForm } from 'react-hook-form';
 
 const Carrinho = () => {
   const { items, removeItem, updateQuantity, clearCart, getTotalPrice } = useCart();
+  const [paymentType, setPaymentType] = React.useState('');
+  const [needsChange, setNeedsChange] = React.useState(false);
+  const form = useForm({
+    defaultValues: {
+      address: '',
+      payment: '',
+      changeFor: '',
+    },
+  });
 
-  const handleFinalizePurchase = () => {
+  const handleFinalizePurchase = (data) => {
     if (items.length === 0) {
       toast({
         title: "Carrinho vazio",
@@ -25,7 +37,12 @@ const Carrinho = () => {
       `• ${item.name} (${item.quantity}x) - R$ ${(item.price * item.quantity).toFixed(2).replace('.', ',')}`
     ).join('\n');
 
-    const message = `*Pedido - Estilo de Bicho*\n\n*Produtos:*\n${itemsList}\n\n*Total: R$ ${total.toFixed(2).replace('.', ',')}*\n\nGostaria de finalizar este pedido. Obrigado!`;
+    let paymentMsg = `Forma de pagamento: ${data.payment}`;
+    if (data.payment === 'dinheiro') {
+      paymentMsg += data.changeFor ? ` (troco para R$ ${data.changeFor})` : ' (sem troco)';
+    }
+
+    const message = `*Pedido - Estilo de Bicho*\n\n*Produtos:*\n${itemsList}\n\n*Total: R$ ${total.toFixed(2).replace('.', ',')}*\n\nEndereço: ${data.address}\n${paymentMsg}\n\nGostaria de finalizar este pedido. Obrigado!`;
     
     const whatsappUrl = `https://wa.me/5535998759887?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -126,40 +143,62 @@ const Carrinho = () => {
                   <h2 className="text-2xl font-bold mb-6 text-gray-800">
                     Resumo do Pedido
                   </h2>
-                  
-                  <div className="space-y-4 mb-6">
-                    {items.map((item) => (
-                      <div key={item.id} className="flex justify-between text-sm">
-                        <span>{item.name} ({item.quantity}x)</span>
-                        <span>R$ {(item.price * item.quantity).toFixed(2).replace('.', ',')}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="border-t pt-4 mb-6">
-                    <div className="flex justify-between text-xl font-bold">
-                      <span>Total:</span>
-                      <span className="text-orange-500">
-                        R$ {getTotalPrice().toFixed(2).replace('.', ',')}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-3">
-                    <Button 
-                      onClick={handleFinalizePurchase}
-                      className="w-full bg-orange-500 text-white hover:bg-orange-600 text-lg py-3 hover:animate-success-pulse transition-all"
-                    >
-                      Finalizar Compra
-                    </Button>
-                    <Button 
-                      variant="outline"
-                      onClick={clearCart}
-                      className="w-full border-red-500 text-red-500 hover:bg-red-50"
-                    >
-                      Limpar Carrinho
-                    </Button>
-                  </div>
+                  {/* Formulário de endereço e pagamento */}
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(handleFinalizePurchase)} className="space-y-4 mb-6">
+                      <FormItem>
+                        <FormLabel>Endereço de entrega</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Rua, número, bairro, cidade" {...form.register('address', { required: true })} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                      <FormItem>
+                        <FormLabel>Forma de pagamento</FormLabel>
+                        <FormControl>
+                          <select
+                            className="w-full border rounded-md px-3 py-2"
+                            {...form.register('payment', { required: true })}
+                            onChange={e => {
+                              form.setValue('payment', e.target.value);
+                              setPaymentType(e.target.value);
+                              setNeedsChange(e.target.value === 'dinheiro');
+                            }}
+                          >
+                            <option value="">Selecione</option>
+                            <option value="credito">Cartão de Crédito</option>
+                            <option value="debito">Cartão de Débito</option>
+                            <option value="pix">Pix</option>
+                            <option value="dinheiro">Dinheiro</option>
+                          </select>
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                      {paymentType === 'dinheiro' && (
+                        <FormItem>
+                          <FormLabel>Troco para quanto?</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Ex: 50,00" {...form.register('changeFor')} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                      <Button 
+                        type="submit"
+                        className="w-full bg-orange-500 text-white hover:bg-orange-600 text-lg py-3 hover:animate-success-pulse transition-all"
+                        disabled={!form.watch('address') || !form.watch('payment') || (paymentType === 'dinheiro' && !form.watch('changeFor'))}
+                      >
+                        Finalizar Compra
+                      </Button>
+                    </form>
+                  </Form>
+                  <Button 
+                    variant="outline"
+                    onClick={clearCart}
+                    className="w-full border-red-500 text-red-500 hover:bg-red-50"
+                  >
+                    Limpar Carrinho
+                  </Button>
                 </CardContent>
               </Card>
             </div>
