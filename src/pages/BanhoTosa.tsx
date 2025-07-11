@@ -68,7 +68,7 @@ const BanhoTosa = () => {
               onClick={handleBanhoTosaClick}
               variant="outline" 
               size="lg" 
-              className="border-white text-blue-600 hover:bg-white/10 text-lg px-8 py-3"
+              className="border-white text-blue-600 bg-white hover:bg-white text-lg px-8 py-3"
             >
               Agendar Banho e Tosa
             </Button>
