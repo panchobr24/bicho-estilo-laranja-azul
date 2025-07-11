@@ -84,7 +84,7 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
               {/* Location Card */}
               <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer group" 
-                    onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=Avenida+Padre+Lourenço+2394+Nossa+Senhora+de+Fátima+Itajubá+MG+37502507', '_blank')}>
+                    onClick={() => window.open('https://www.google.com/maps?q=Av.+Padre+Lourenço+da+Costa-Rodovia+Br-459,+2394+-+Nossa+Sra.+de+Fatima,+Itajubá+-+MG,+37502-507', '_blank')}>
                 <CardContent className="p-0 text-center">
                   <div className="text-primary mb-3 group-hover:animate-bounce-soft">
                     <svg className="w-8 h-8 mx-auto" fill="currentColor" viewBox="0 0 20 20">
