@@ -131,7 +131,7 @@ const Index = () => {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all animate-glow"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-3"
               >
                 <Link to="/racoes">Ver Produtos</Link>
               </Button>
@@ -139,7 +139,7 @@ const Index = () => {
                 asChild 
                 variant="outline" 
                 size="lg" 
-                className="text-lg px-8 py-3 animate-float"
+                className="text-lg px-8 py-3"
               >
                 <Link to="/banho-tosa">Banho e Tosa</Link>
               </Button>
@@ -238,7 +238,7 @@ const Index = () => {
           <Button 
             asChild 
             size="lg" 
-            className="bg-background text-foreground hover:bg-background/90 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all animate-glow"
+            className="bg-background text-foreground hover:bg-background/90 text-lg px-8 py-3"
           >
             <a 
               href="https://wa.me/5535998759887?text=Olá! Gostaria de saber mais sobre os produtos do Estilo de Bicho."

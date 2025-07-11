@@ -27,7 +27,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ category, title, descriptio
       </section>
 
       {/* Products Grid */}
-      <section className="py-16">
+      <section className="py-16 bg-orange-500">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoryProducts.map((product) => (
@@ -44,7 +44,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ category, title, descriptio
           
           {categoryProducts.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-white">
                 Produtos em breve! Fique ligado nas novidades.
               </p>
             </div>
