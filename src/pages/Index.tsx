@@ -131,7 +131,7 @@ const Index = () => {
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all animate-glow"
               >
                 <Link to="/racoes">Ver Produtos</Link>
               </Button>
@@ -139,7 +139,7 @@ const Index = () => {
                 asChild 
                 variant="outline" 
                 size="lg" 
-                className="border-secondary text-secondary hover:bg-secondary/10 text-lg px-8 py-3"
+                className="text-lg px-8 py-3 animate-float"
               >
                 <Link to="/banho-tosa">Banho e Tosa</Link>
               </Button>
@@ -161,20 +161,21 @@ const Index = () => {
       </section>
 
       {/* Categories Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">
-            <span className="text-gray-800">Nossas</span>{' '}
-            <span className="text-orange-500">Categorias</span>
+          <h2 className="text-4xl font-bold text-center mb-4 animate-slide-in">
+            <span className="text-foreground">Nossas</span>{' '}
+            <span className="text-primary">Categorias</span>
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-16">
+          <p className="text-xl text-muted-foreground text-center mb-16 animate-slide-in">
             Descubra nossa seleção completa de produtos para seu pet
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {categories.map((category) => (
+            {categories.map((category, index) => (
               <Link key={category.path} to={category.path}>
-                <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden h-full">
+                <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden h-full animate-slide-in" 
+                      style={{animationDelay: `${index * 0.1}s`}}>
                   <CardContent className="p-0">
                     <div className="aspect-square overflow-hidden">
                       <img 
@@ -184,10 +185,10 @@ const Index = () => {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-2 text-gray-800 group-hover:text-blue-600 transition-colors">
+                      <h3 className="text-2xl font-bold mb-2 text-foreground group-hover:text-secondary transition-colors duration-300">
                         {category.name}
                       </h3>
-                      <p className="text-gray-600">{category.description}</p>
+                      <p className="text-muted-foreground">{category.description}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -198,24 +199,25 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 gradient-bg">
+      <section className="py-20 bg-secondary/20">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            <span className="text-gray-800">Por que escolher o</span>{' '}
-            <span className="text-blue-500">Estilo de Bicho?</span>
+          <h2 className="text-4xl font-bold text-center mb-16 animate-slide-in">
+            <span className="text-foreground">Por que escolher o</span>{' '}
+            <span className="text-secondary">Estilo de Bicho?</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {benefits.map((benefit, index) => (
-              <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="text-center p-6 hover:shadow-lg transition-all duration-500 hover:-translate-y-2 animate-slide-in group" 
+                    style={{animationDelay: `${index * 0.1}s`}}>
                 <CardContent className="pt-6">
-                  <div className="flex justify-center mb-4">
+                  <div className="flex justify-center mb-4 group-hover:animate-bounce-soft">
                     {benefit.icon}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-gray-800">
+                  <h3 className="text-xl font-bold mb-3 text-foreground">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600">{benefit.description}</p>
+                  <p className="text-muted-foreground">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -224,19 +226,19 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-500 to-blue-600">
+      <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
+          <h2 className="text-4xl font-bold text-secondary-foreground mb-6 animate-slide-in">
             Pronto para cuidar melhor do seu pet?
           </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-secondary-foreground/80 mb-8 max-w-2xl mx-auto animate-slide-in">
             Entre em contato conosco via WhatsApp e descubra como podemos 
             ajudar a deixar seu animal de estimação ainda mais feliz!
           </p>
           <Button 
             asChild 
             size="lg" 
-            className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3"
+            className="bg-background text-foreground hover:bg-background/90 text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all animate-glow"
           >
             <a 
               href="https://wa.me/5535998759887?text=Olá! Gostaria de saber mais sobre os produtos do Estilo de Bicho."
@@ -248,6 +250,15 @@ const Index = () => {
           </Button>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="py-6 bg-foreground text-background">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm">
+            © 2024 Estilo de Bicho. Site desenvolvido por <span className="font-semibold">Daniel de Oliveira</span>.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

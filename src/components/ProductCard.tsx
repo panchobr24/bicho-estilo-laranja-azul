@@ -45,7 +45,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, name, price, image, categ
             </span>
             <Button 
               onClick={handleAddToCart}
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 animate-scale-bounce"
             >
               <Plus className="h-4 w-4 mr-1" />
               Adicionar ao Carrinho
