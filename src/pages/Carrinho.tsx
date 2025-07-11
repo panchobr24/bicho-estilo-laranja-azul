@@ -148,7 +148,7 @@ const Carrinho = () => {
                   <div className="space-y-3">
                     <Button 
                       onClick={handleFinalizePurchase}
-                      className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-lg py-3 hover:animate-success-pulse transition-all"
+                      className="w-full bg-orange-500 text-white hover:bg-orange-600 text-lg py-3 hover:animate-success-pulse transition-all"
                     >
                       Finalizar Compra
                     </Button>

@@ -15,19 +15,19 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ category, title, descriptio
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <section className="bg-primary py-16">
+      <section className="bg-orange-500 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {title}
           </h1>
-          <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             {description}
           </p>
         </div>
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 bg-orange-500">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {categoryProducts.map((product) => (
@@ -44,7 +44,7 @@ const ProductsPage: React.FC<ProductsPageProps> = ({ category, title, descriptio
           
           {categoryProducts.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-xl text-white">
+              <p className="text-xl text-orange-500">
                 Produtos em breve! Fique ligado nas novidades.
               </p>
             </div>

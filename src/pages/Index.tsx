@@ -130,8 +130,9 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 asChild 
+                variant="outline" 
                 size="lg" 
-                className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-3"
+                className="text-lg px-8 py-3"
               >
                 <Link to="/racoes">Ver Produtos</Link>
               </Button>
@@ -238,7 +239,7 @@ const Index = () => {
           <Button 
             asChild 
             size="lg" 
-            className="bg-background text-foreground hover:bg-background/90 text-lg px-8 py-3"
+            className="bg-orange-500 text-white hover:bg-orange-600 text-lg px-8 py-3"
           >
             <a 
               href="https://wa.me/5535998759887?text=Olá! Gostaria de saber mais sobre os produtos do Estilo de Bicho."

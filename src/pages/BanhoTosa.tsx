@@ -47,7 +47,7 @@ const BanhoTosa = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-500 to-orange-500 py-20">
+      <section className="bg-orange-500 py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Banho e Tosa
@@ -60,7 +60,7 @@ const BanhoTosa = () => {
             <Button 
               onClick={handleBanhoClick}
               size="lg" 
-              className="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-3"
+              className="bg-white text-orange-500 hover:bg-gray-100 text-lg px-8 py-3 border border-orange-500"
             >
               Agendar Banho
             </Button>
