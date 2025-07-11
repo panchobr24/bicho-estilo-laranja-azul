@@ -49,6 +49,17 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
       }
       return [...prev, { ...newItem, quantity: 1 }];
     });
+    
+    // Trigger cart animation
+    setTimeout(() => {
+      const cartButton = document.querySelector('[data-cart-button]');
+      if (cartButton) {
+        cartButton.classList.add('animate-scale-bounce');
+        setTimeout(() => {
+          cartButton.classList.remove('animate-scale-bounce');
+        }, 300);
+      }
+    }, 100);
   };
 
   const removeItem = (id: string) => {

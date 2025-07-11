@@ -57,10 +57,15 @@ const Header = () => {
           {/* Cart and Mobile Menu */}
           <div className="flex items-center space-x-4">
             <Link to="/carrinho">
-              <Button variant="outline" size="sm" className="relative border-blue-500 text-blue-500 hover:bg-blue-50">
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="relative border-secondary text-secondary hover:bg-secondary/10"
+                data-cart-button
+              >
                 <ShoppingCart className="h-4 w-4" />
                 {getItemCount() > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
                     {getItemCount()}
                   </span>
                 )}

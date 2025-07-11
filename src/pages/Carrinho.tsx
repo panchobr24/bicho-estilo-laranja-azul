@@ -148,9 +148,9 @@ const Carrinho = () => {
                   <div className="space-y-3">
                     <Button 
                       onClick={handleFinalizePurchase}
-                      className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-lg py-3"
+                      className="w-full bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-lg py-3 hover:animate-success-pulse transition-all"
                     >
-                      Finalizar via WhatsApp
+                      Finalizar Compra
                     </Button>
                     <Button 
                       variant="outline"

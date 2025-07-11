@@ -57,24 +57,81 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen animate-fade-in-up">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-50 to-blue-50 py-20 wavy-border">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-orange-500">Estilo</span>{' '}
-              <span className="text-blue-500">de Bicho</span>
+      <section className="relative bg-gradient-to-br from-accent/20 to-secondary/20 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5"></div>
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Logo */}
+            <div className="mb-8 animate-paw-bounce">
+              <img 
+                src="/lovable-uploads/504ac006-59be-4f6a-9f1a-9a4035026ae5.png" 
+                alt="Estilo de Bicho" 
+                className="h-24 md:h-32 w-auto mx-auto drop-shadow-lg"
+              />
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
+              Tudo o que seu pet precisa em um só lugar!
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 leading-relaxed">
-              Tudo o que seu pet precisa em um só lugar! Produtos de qualidade, 
-              preços justos e muito carinho por cada animal.
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
+              Produtos de qualidade, preços justos e muito carinho por cada animal. 
+              Sua loja de confiança para cuidar de quem você mais ama.
             </p>
+
+            {/* Store Info Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
+              {/* Location Card */}
+              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer group" 
+                    onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=Avenida+Padre+Lourenço+2394+Nossa+Senhora+de+Fátima+Itajubá+MG+37502507', '_blank')}>
+                <CardContent className="p-0 text-center">
+                  <div className="text-primary mb-3 group-hover:animate-bounce-soft">
+                    <svg className="w-8 h-8 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-lg mb-2 text-foreground">Nossa Localização</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Avenida Padre Lourenço 2394<br />
+                    Nossa Senhora de Fátima<br />
+                    Itajubá, MG - 37502507
+                  </p>
+                  <p className="text-xs text-primary mt-2 group-hover:underline">
+                    Clique para abrir no Maps
+                  </p>
+                </CardContent>
+              </Card>
+
+              {/* Hours Card */}
+              <Card className="p-6 hover:shadow-lg transition-shadow">
+                <CardContent className="p-0 text-center">
+                  <div className="text-primary mb-3">
+                    <svg className="w-8 h-8 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-lg mb-3 text-foreground">Horário de Funcionamento</h3>
+                  <div className="space-y-2 text-sm">
+                    <div>
+                      <p className="font-medium text-foreground">Loja</p>
+                      <p className="text-muted-foreground">Segunda a Sábado: 8:00 - 20:00</p>
+                      <p className="text-muted-foreground">Domingo: 8:00 - 12:00</p>
+                    </div>
+                    <div className="pt-2 border-t border-border">
+                      <p className="font-medium text-foreground">Delivery</p>
+                      <p className="text-muted-foreground">Segunda a Sábado: 8:30 - 19:00</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 asChild 
                 size="lg" 
-                className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-lg px-8 py-3"
+                className="bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-lg px-8 py-3 shadow-lg hover:shadow-xl transition-all"
               >
                 <Link to="/racoes">Ver Produtos</Link>
               </Button>
@@ -82,12 +139,24 @@ const Index = () => {
                 asChild 
                 variant="outline" 
                 size="lg" 
-                className="border-blue-500 text-blue-500 hover:bg-blue-50 text-lg px-8 py-3"
+                className="border-secondary text-secondary hover:bg-secondary/10 text-lg px-8 py-3"
               >
                 <Link to="/banho-tosa">Banho e Tosa</Link>
               </Button>
             </div>
           </div>
+        </div>
+        
+        {/* Decorative paw prints */}
+        <div className="absolute top-10 left-10 text-primary/20 animate-paw-bounce">
+          <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 12L8 10l-2 2 2 2 2-2zm0-4L8 6 6 8l2 2 2-2z"/>
+          </svg>
+        </div>
+        <div className="absolute bottom-10 right-10 text-secondary/20 animate-paw-bounce" style={{animationDelay: '0.3s'}}>
+          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 12L8 10l-2 2 2 2 2-2zm0-4L8 6 6 8l2 2 2-2z"/>
+          </svg>
         </div>
       </section>
 
