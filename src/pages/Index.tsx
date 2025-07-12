@@ -145,7 +145,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <Link to="/banho-tosa">
-              <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden h-full animate-slide-in border-2 border-transparent hover:border-orange-400">
+              <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden h-full animate-slide-in border-2 border-transparent hover:border-primary">
                 <CardContent className="p-0">
                   <div className="aspect-video overflow-hidden">
                     <img 
@@ -154,31 +154,31 @@ const Index = () => {
                       className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
-                  <div className="p-6 bg-gradient-to-r from-orange-50 to-orange-100 group-hover:from-orange-100 group-hover:to-orange-200 transition-all duration-300">
-                    <h3 className="text-2xl font-bold mb-2 text-orange-700 group-hover:text-orange-800 transition-colors duration-300">
+                  <div className="p-6 bg-card group-hover:bg-accent/20 transition-all duration-300">
+                    <h3 className="text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
                       Banho e Tosa
                     </h3>
-                    <p className="text-orange-600">Cuidados profissionais para deixar seu pet limpo e bonito</p>
+                    <p className="text-muted-foreground">Cuidados profissionais para deixar seu pet limpo e bonito</p>
                   </div>
                 </CardContent>
               </Card>
             </Link>
 
             <Link to="/contate-nos">
-              <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden h-full animate-slide-in border-2 border-transparent hover:border-blue-400">
+              <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden h-full animate-slide-in border-2 border-transparent hover:border-primary">
                 <CardContent className="p-0">
                   <div className="aspect-video overflow-hidden">
                     <img 
                       src="/lovable-uploads/f8b9c434-2886-4d05-925c-a5fb433a2737.png" 
                       alt="Contato"
-                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
-                  <div className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
-                    <h3 className="text-2xl font-bold mb-2 text-blue-700 group-hover:text-blue-800 transition-colors duration-300">
+                  <div className="p-6 bg-card group-hover:bg-accent/20 transition-all duration-300">
+                    <h3 className="text-2xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
                       Entre em Contato
                     </h3>
-                    <p className="text-blue-600">Tire suas dúvidas e agende serviços via WhatsApp</p>
+                    <p className="text-muted-foreground">Tire suas dúvidas e agende serviços via WhatsApp</p>
                   </div>
                 </CardContent>
               </Card>
