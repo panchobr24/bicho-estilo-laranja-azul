@@ -151,7 +151,7 @@ const Index = () => {
                     <img 
                       src="/lovable-uploads/f75abd98-9e3a-4263-aa1a-56e8e2f07c4a.png" 
                       alt="Banho e Tosa"
-                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                   <div className="p-6 bg-card group-hover:bg-accent/20 transition-all duration-300">
