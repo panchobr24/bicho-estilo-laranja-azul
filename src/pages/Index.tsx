@@ -154,7 +154,7 @@ const Index = () => {
                       className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
-                  <div className="p-6 bg-gradient-to-r from-orange-50 to-orange-100 group-hover:from-orange-100 group-hover:to-orange-200 transition-all duration-300">
+                  <div className="p-6 bg-white group-hover:bg-gray-50 transition-all duration-300">
                     <h3 className="text-2xl font-bold mb-2 text-orange-700 group-hover:text-orange-800 transition-colors duration-300">
                       Banho e Tosa
                     </h3>
