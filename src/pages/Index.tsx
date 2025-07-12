@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, Shield, Truck, Clock } from 'lucide-react';
@@ -150,7 +151,7 @@ const Index = () => {
                     <img 
                       src="/lovable-uploads/f75abd98-9e3a-4263-aa1a-56e8e2f07c4a.png" 
                       alt="Banho e Tosa"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                   <div className="p-6 bg-gradient-to-r from-orange-50 to-orange-100 group-hover:from-orange-100 group-hover:to-orange-200 transition-all duration-300">
@@ -170,7 +171,7 @@ const Index = () => {
                     <img 
                       src="/lovable-uploads/f8b9c434-2886-4d05-925c-a5fb433a2737.png" 
                       alt="Contato"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
                   <div className="p-6 bg-gradient-to-r from-blue-50 to-blue-100 group-hover:from-blue-100 group-hover:to-blue-200 transition-all duration-300">
