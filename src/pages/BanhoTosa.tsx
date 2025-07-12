@@ -96,9 +96,9 @@ const BanhoTosa = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 bg-blue-500">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-white">
+          <h2 className="text-3xl font-bold text-center mb-12 text-blue-500">
             Nossos Serviços
           </h2>
           
