@@ -244,7 +244,7 @@ const Index = () => {
       <footer className="py-6 bg-foreground text-background">
         <div className="container mx-auto px-4 text-center">
           <p className="text-sm">
-            © 2024 Estilo de Bicho. Site desenvolvido por <span className="font-semibold">Daniel de Oliveira</span>.
+            © 2025 Estilo de Bicho. Site desenvolvido por <span className="font-semibold">Daniel de Oliveira</span>.
           </p>
         </div>
       </footer>
