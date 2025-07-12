@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { MessageCircle, Clock, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -18,7 +17,7 @@ const ContatetNos = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-500 to-orange-500 py-20">
+      <section className="bg-orange-500 py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Contate-nos
