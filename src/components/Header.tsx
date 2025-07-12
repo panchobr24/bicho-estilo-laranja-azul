@@ -1,22 +1,17 @@
 
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingCart, Menu, X } from 'lucide-react';
-import { useCart } from '@/contexts/CartContext';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Header = () => {
   const location = useLocation();
-  const { getItemCount } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
     { path: '/', label: 'Início' },
-    { path: '/racoes', label: 'Rações' },
-    { path: '/petiscos', label: 'Petiscos' },
-    { path: '/brinquedos', label: 'Brinquedos' },
-    { path: '/medicamentos', label: 'Medicamentos' },
-    { path: '/banho-tosa', label: 'Banho e Tosa' }
+    { path: '/banho-tosa', label: 'Banho e Tosa' },
+    { path: '/contate-nos', label: 'Contate-nos' }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -54,34 +49,15 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Cart and Mobile Menu */}
-          <div className="flex items-center space-x-4">
-            <Link to="/carrinho">
-              <Button 
-                variant="outline" 
-                size="sm" 
-                className="relative border-secondary text-secondary hover:bg-secondary/10"
-                data-cart-button
-              >
-                <ShoppingCart className="h-4 w-4" />
-                {getItemCount() > 0 && (
-                  <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                    {getItemCount()}
-                  </span>
-                )}
-              </Button>
-            </Link>
-
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-            </Button>
-          </div>
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="sm"
+            className="lg:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </Button>
         </div>
 
         {/* Mobile Navigation */}

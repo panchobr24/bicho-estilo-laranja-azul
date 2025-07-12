@@ -6,37 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Index = () => {
-  const categories = [
-    {
-      name: 'Rações',
-      path: '/racoes',
-      image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=400',
-      description: 'Alimentação completa e balanceada'
-    },
-    {
-      name: 'Petiscos',
-      path: '/petiscos',
-      image: 'https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=400',
-      description: 'Sabores irresistíveis para seu pet'
-    },
-    {
-      name: 'Brinquedos',
-      path: '/brinquedos',
-      image: 'https://images.unsplash.com/photo-1608344989906-9668d4c56ba9?w=400',
-      description: 'Diversão garantida para todas as idades'
-    },
-    {
-      name: 'Medicamentos',
-      path: '/medicamentos',
-      image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400',
-      description: 'Cuidados veterinários essenciais'
-    }
-  ];
-
   const benefits = [
     {
       icon: <Heart className="h-8 w-8 text-orange-500" />,
-      title: 'Amor pelos Animais',
+      title: 'Amor pelos Pets',
       description: 'Cada produto é selecionado pensando no bem-estar do seu pet'
     },
     {
@@ -76,7 +49,7 @@ const Index = () => {
               Tudo o que seu pet precisa em um só lugar!
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
-              Produtos de qualidade, preços justos e muito carinho por cada animal. 
+              Produtos de qualidade, preços justos e muito carinho por cada pet. 
               Sua loja de confiança para cuidar de quem você mais ama.
             </p>
 
@@ -134,7 +107,7 @@ const Index = () => {
                 size="lg" 
                 className="text-lg px-8 py-3"
               >
-                <Link to="/racoes">Ver Produtos</Link>
+                <Link to="/banho-tosa">Banho e Tosa</Link>
               </Button>
               <Button 
                 asChild 
@@ -142,7 +115,7 @@ const Index = () => {
                 size="lg" 
                 className="text-lg px-8 py-3"
               >
-                <Link to="/banho-tosa">Banho e Tosa</Link>
+                <Link to="/contate-nos">Entrar em Contato</Link>
               </Button>
             </div>
           </div>
@@ -161,40 +134,57 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Categories Section */}
+      {/* Services Section */}
       <section className="py-20 bg-accent/30">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4 animate-slide-in">
-            <span className="text-foreground">Nossas</span>{' '}
-            <span className="text-primary">Categorias</span>
+            <span className="text-foreground">Nossos</span>{' '}
+            <span className="text-primary">Serviços</span>
           </h2>
           <p className="text-xl text-muted-foreground text-center mb-16 animate-slide-in">
-            Descubra nossa seleção completa de produtos para seu pet
+            Cuidados especializados para o seu pet
           </p>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {categories.map((category, index) => (
-              <Link key={category.path} to={category.path}>
-                <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden h-full animate-slide-in" 
-                      style={{animationDelay: `${index * 0.1}s`}}>
-                  <CardContent className="p-0">
-                    <div className="aspect-square overflow-hidden">
-                      <img 
-                        src={category.image} 
-                        alt={category.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-2xl font-bold mb-2 text-foreground group-hover:text-secondary transition-colors duration-300">
-                        {category.name}
-                      </h3>
-                      <p className="text-muted-foreground">{category.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <Link to="/banho-tosa">
+              <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden h-full animate-slide-in">
+                <CardContent className="p-0">
+                  <div className="aspect-video overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=400" 
+                      alt="Banho e Tosa"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2 text-foreground group-hover:text-secondary transition-colors duration-300">
+                      Banho e Tosa
+                    </h3>
+                    <p className="text-muted-foreground">Cuidados profissionais para deixar seu pet limpo e bonito</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/contate-nos">
+              <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-105 overflow-hidden h-full animate-slide-in">
+                <CardContent className="p-0">
+                  <div className="aspect-video overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=400" 
+                      alt="Contato"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2 text-foreground group-hover:text-secondary transition-colors duration-300">
+                      Entre em Contato
+                    </h3>
+                    <p className="text-muted-foreground">Tire suas dúvidas e agende serviços via WhatsApp</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
@@ -234,7 +224,7 @@ const Index = () => {
           </h2>
           <p className="text-xl text-secondary-foreground/80 mb-8 max-w-2xl mx-auto animate-slide-in">
             Entre em contato conosco via WhatsApp e descubra como podemos 
-            ajudar a deixar seu animal de estimação ainda mais feliz!
+            ajudar a deixar seu pet de estimação ainda mais feliz!
           </p>
           <Button 
             asChild 
@@ -242,7 +232,7 @@ const Index = () => {
             className="bg-orange-500 text-white hover:bg-orange-600 text-lg px-8 py-3"
           >
             <a 
-              href="https://wa.me/5535998759887?text=Olá! Gostaria de saber mais sobre os produtos do Estilo de Bicho."
+              href="https://wa.me/5535998759887?text=Olá! Gostaria de saber mais sobre os serviços do Estilo de Bicho."
               target="_blank"
               rel="noopener noreferrer"
             >
